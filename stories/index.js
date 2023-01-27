@@ -1,5 +1,5 @@
 import React from "react";
-import DayListItem from "components/DaylistItem";
+import DayListItem from "components/DayListItem";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
@@ -32,3 +32,4 @@ storiesOf("Button", module)
   .add("Clickable", () => (
     <DayListItem name="Tuesday" setDay={action("setDay")} spots={5} /> 
   ));
+  
