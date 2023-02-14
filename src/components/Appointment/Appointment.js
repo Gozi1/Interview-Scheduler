@@ -32,21 +32,18 @@ export default function Appointment(props){
     }
 
     transition(SAVING)
-    bookInterview(id,interview)
-    .then(()=>{transition(SHOW)})
-    .catch((error)=>{
-      
-      transition(ERROR_SAVE,true)})
+
+    bookInterview(props.id, interview)
+    .then(() => transition(SHOW))
+    .catch(() => transition(ERROR_SAVE, true));
   }
 
   function cancel(){
     transition(DELETE,true)
-    
+
     cancelInterview(id)
-    .then(()=>{transition(EMPTY)})
-    .catch((error)=>{
-      console.log('I am here')
-      transition(ERROR_DELETE,true)})
+    .then(()=>transition(EMPTY))
+    .catch(()=>transition(ERROR_DELETE,true))
   }
 
   return (
