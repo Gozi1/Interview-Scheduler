@@ -8,7 +8,16 @@ function getAppointmentsForDay(state, day) {
 
   return theAppointments;
 }
+function getInterviewersForDay(state, day) {
+  // finds theDay object of the day in days State
+   const theDay  = state['days'].find(thisDay => thisDay.name === day);
+  
+   if(!theDay)return [];
 
+  const theInterviewers = theDay['interviewers'].map(i => state['interviewers'][i]);
+  
+  return theInterviewers;
+}
 
 function getInterview(state, interview){
   if(!interview)return null;
@@ -17,4 +26,4 @@ function getInterview(state, interview){
 
 }
 
-module.exports = {getInterview,getAppointmentsForDay}
+module.exports = {getInterview,getAppointmentsForDay,getInterviewersForDay}
