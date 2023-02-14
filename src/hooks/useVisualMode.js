@@ -13,7 +13,6 @@ export default function useVisualMode(initial) {
     // replaces history 
     if(replace){
       setHistory(history.slice(0, -1)); 
-      console.log(history)
     }
     
   }

@@ -20,8 +20,10 @@ function getInterviewersForDay(state, day) {
 }
 
 function getInterview(state, interview){
+  
   if(!interview)return null;
   const returnObject = { interviewer : state.interviewers[interview.interviewer],student : interview.student}
+  
   return returnObject;
 
 }
