@@ -1,5 +1,6 @@
 import React from 'react'
-
+// Component for showing interviews
+// Needs props student(name) and interview object 
 export default function Show (props) {
   return (
     <main className="appointment__card appointment__card--show">

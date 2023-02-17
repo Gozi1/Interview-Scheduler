@@ -8,5 +8,3 @@ export {default as Status} from './Status';
 export {default as Error} from './Error'
 export {default as Form} from './Form'
 
-const EMPTY = "EMPTY";
-const SHOW = "SHOW";

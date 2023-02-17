@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+// Needs time prop
 export default function Header(props){
   return (
     <header className="appointment__time">

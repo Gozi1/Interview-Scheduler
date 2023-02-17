@@ -1,5 +1,7 @@
 import React from 'react'
 
+// Component for display any error
+// Needs props  a function onClose and message string
 export default function Error  (props){
   return (
     <main className="appointment__card appointment__card--error">

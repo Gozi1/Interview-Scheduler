@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Loading components shown when in-between modes/ when transistioning
 export default function Status(props)  {
   return (
     <main className="appointment__card appointment__card--status">

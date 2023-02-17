@@ -18,6 +18,10 @@ const CONFIRM = "CONFIRM"
 const EDIT = "EDIT"
 const ERROR_SAVE ="ERROR_SAVE"
 const ERROR_DELETE = "ERROR_DELETE"
+/**  A holy combinations of the components in this folder to make 
+ a seamless transistion between different modes for an appointment
+slot  
+ Uses props: id,interview,interviewers,bookInterview,cancelInterview */
 
 export default function Appointment(props){
 

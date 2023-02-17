@@ -17,7 +17,8 @@ export default function Application(props) {
   } = useApplicationData();
 
   const interviewers = getInterviewersForDay(state, state.day);
-
+  
+  // an array of all the appointments for the selected day
   const appointments = getAppointmentsForDay(state, state.day).map(
     appointment => {
       return (

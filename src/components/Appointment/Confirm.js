@@ -1,5 +1,7 @@
 import React from 'react'
 import Button from 'components/Button'
+
+// Uses functions from props onCancel and onConfirm
 export default function Confirm(props){
   return (
     <main className="appointment__card appointment__card--confirm">

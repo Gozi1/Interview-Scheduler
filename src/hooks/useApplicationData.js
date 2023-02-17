@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState,useEffect } from 'react'
 import { getAppointmentsForDay } from "helpers/selectors";
 export default function useApplicationData() {
+
   const [state, setState] = useState({
     day: "Monday",
     days: [],
@@ -9,21 +10,17 @@ export default function useApplicationData() {
     interviewers: {}
   })
   function updateSpots (currentState){
-    const spots = getAppointmentsForDay(currentState, currentState.day).
-    filter(appointment => appointment.interview === null)
+    // gets the number of spots remaining for the day
+    const spots = getAppointmentsForDay(currentState, currentState.day)
+    .filter(appointment => appointment.interview === null)
     .length
 
-    console.log(spots)
-
-    // console.log(getAppointmentsForDay(currentState, currentState.day))
     const dayIndex =currentState['days'].findIndex(thisDay => thisDay.name === currentState.day)
 
     const days = [...currentState.days,]
     
     days[dayIndex] = {...currentState.days[dayIndex],spots}
-    console.log(days)
     return days
-    // setState({...currentState,days})
     
     
   }
@@ -37,7 +34,7 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     }
-
+    // sets the new state in both the api database and the state variable
     return axios.put(`/api/appointments/${id}`, {interview} )
     .then(()=>{
       
@@ -60,7 +57,7 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     }
-
+// sets the new state in both the api database and the state variable
     return axios.delete(`/api/appointments/${id}`)
     .then(()=>{
       setState((prev)=>{
@@ -68,8 +65,10 @@ export default function useApplicationData() {
         return{...prev,appointments,days}})
     })
   }
+  // function to set the day
   const setDay = (day) => setState({ ...state, day })
-
+  
+  // populates the state variable at the start
   useEffect(()=>{
 
     const daysUrl ='/api/days'

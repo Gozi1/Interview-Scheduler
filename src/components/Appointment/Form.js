@@ -1,8 +1,10 @@
 import React from 'react'
 import InterviewerList from 'components/InterviewerList'
 import Button from 'components/Button'
-import { useState } from 'react';
+import { useState } from 'react'
 
+// Component for making/editing interviews
+// Uses props student, interviewer and interviewers objects 
 export default function Form(props){
 
   const [student, setStudent] = useState(props.student || "")
