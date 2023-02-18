@@ -7,4 +7,4 @@ export {default as Confirm} from './Confirm';
 export {default as Status} from './Status';
 export {default as Error} from './Error'
 export {default as Form} from './Form'
-
+// Used to make importing any of the functions above easier and grouped together 

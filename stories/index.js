@@ -7,7 +7,7 @@ import InterviewerListItem from "components/InterviewerListItem";
 import InterviewerList from "components/InterviewerList";
 import "index.scss";
 import Button from "components/Button";
-import {Appointment,Header,Empty,Show,Confirm,Status,Error,Form} from "components/Appointment/index";
+import {Appointment,Header,Empty,Show,Confirm,Status,Error,Form} from "components/Appointment";
 
 storiesOf("Button", module)
   .addParameters({

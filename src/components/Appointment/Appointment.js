@@ -18,6 +18,7 @@ const CONFIRM = "CONFIRM"
 const EDIT = "EDIT"
 const ERROR_SAVE ="ERROR_SAVE"
 const ERROR_DELETE = "ERROR_DELETE"
+const ERROR_EMPTY = "ERROR_EMPTY"
 /**  A holy combinations of the components in this folder to make 
  a seamless transistion between different modes for an appointment
 slot  
@@ -30,6 +31,10 @@ export default function Appointment(props){
     interview ? SHOW : EMPTY
   );
   function save(name, interviewer) {
+    if(!name || !interviewer){
+      transition(ERROR_EMPTY)
+      return
+    }
     const interview = {
       student: name,
       interviewer
@@ -39,7 +44,7 @@ export default function Appointment(props){
 
     bookInterview(props.id, interview)
     .then(() => transition(SHOW))
-    .catch(() => transition(ERROR_SAVE, true));
+    .catch(() => transition(ERROR_SAVE));
   }
 
   function cancel(){
@@ -97,7 +102,10 @@ export default function Appointment(props){
         }
       {mode === ERROR_SAVE &&  
       <Error message = "Could not save appointment." onClose = {back}/>
-        }  
+        } 
+        {mode === ERROR_EMPTY&&  
+      <Error message = "Please provide information for all fields." onClose = {back}/>
+        } 
       
     </article>
   )
