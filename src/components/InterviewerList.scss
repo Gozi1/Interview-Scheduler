@@ -1,48 +1,48 @@
-@import "styles/mixins.scss";
-@import "styles/variables.scss";
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
 
 .interviewers {
-  &__item {
-    @include button-inactive--opacity;
+	&__item {
+		@include button-inactive--opacity;
 
-    margin-right: 0.5rem;
+		margin-right: 0.5rem;
 
-    &-image {
-      border-radius: 16px;
-    }
+		&-image {
+			border-radius: 16px;
+		}
 
-    &--selected {
-      color: $dark-background;
-      background-color: $white;
-      border-radius: 16px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      padding-left: 2px;
-      padding-right: 1rem;
-      user-select: none;
-    }
+		&--selected {
+			color: $dark-background;
+			background-color: $white;
+			border-radius: 16px;
+			height: 32px;
+			display: flex;
+			align-items: center;
+			padding-left: 2px;
+			padding-right: 1rem;
+			user-select: none;
+		}
 
-    &--selected &-image {
-      width: 28px;
-      height: 28px;
-      margin-right: 0.5rem;
-    }
+		&--selected &-image {
+			width: 28px;
+			height: 28px;
+			margin-right: 0.5rem;
+		}
 
-    &--selected,
-    &:hover {
-      @include button-active--opacity;
-    }
-  }
+		&--selected,
+		&:hover {
+			@include button-active--opacity;
+		}
+	}
 }
 .interviewers {
-  &__header {
-    color: $white;
-    margin-bottom: 0.5rem;
-  }
+	&__header {
+		color: $white;
+		margin-bottom: 0.5rem;
+	}
 
-  &__list {
-    display: flex;
-    flex-flow: row wrap;
-  }
+	&__list {
+		display: flex;
+		flex-flow: row wrap;
+	}
 }

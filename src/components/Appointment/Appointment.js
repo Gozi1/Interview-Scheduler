@@ -30,8 +30,10 @@ export default function Appointment(props){
   const { mode, transition, back } = useVisualMode(
     interview ? SHOW : EMPTY
   );
+
   function save(name, interviewer) {
-    if(!name || !interviewer){
+  
+    if (!name || !interviewer) {
       transition(ERROR_EMPTY)
       return
     }
@@ -48,8 +50,7 @@ export default function Appointment(props){
   }
 
   function cancel(){
-    transition(DELETE,true)
-
+    transition(DELETE, true);
     cancelInterview(id)
     .then(()=>transition(EMPTY))
     .catch(()=>transition(ERROR_DELETE,true))
@@ -73,9 +74,8 @@ export default function Appointment(props){
       {mode === CREATE && 
       <Form  
       interviewers ={interviewers} 
-      onSave = {save} 
-      onCancel={back} />}
-
+        onSave={save} 
+        onCancel={back} />}
         {mode === SAVING && 
         <Status message="Saving"/>
       }
