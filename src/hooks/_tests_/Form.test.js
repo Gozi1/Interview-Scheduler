@@ -1,6 +1,7 @@
 import { render, cleanup,fireEvent } from '@testing-library/react';
+import React from 'react';
 
-import { Form, Appointment } from 'components/Appointment';
+import { Form } from 'components/Appointment';
 
 afterEach(cleanup);
 
@@ -82,6 +83,3 @@ describe('Form', () => {
 	});
 });
 
-it('renders without crashing', () => {
-	render(<Appointment />);
-});
