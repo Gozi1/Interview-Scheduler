@@ -9,7 +9,9 @@ const InterviewListItem = (props) => {
 		'interviewers__item--selected': selected,
 	});
 	return (
-		<li className={interviewerClass} onClick={setInterviewer}>
+		<li className={interviewerClass} 
+		onClick={setInterviewer}
+		data-testid="interview" >
 			<img className='interviewers__item-image' src={avatar} alt={name} />
 			{selected && name}
 		</li>
