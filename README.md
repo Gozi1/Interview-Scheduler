@@ -41,3 +41,4 @@ npm run storybook
 
 - storybook
 - jest
+- cypresss
