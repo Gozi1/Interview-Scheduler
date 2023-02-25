@@ -5,6 +5,9 @@ allows a student to make appointments with a mentor.
 This project works with the 
 [scheduler-api ](https://github.com/Gozi1/scheduler-api) which is responsible for providing the data used.
 
+### (Online Preview) [https://ngozi-interview-scheduler.netlify.app/]
+
+
 !["Demo"](public/images/scheduler.gif)
 ### Demo
 #
